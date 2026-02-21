@@ -1,6 +1,6 @@
 # ml-hw-winter-2026-python
 
-Sample Usage
+# Sample Usage
 
 'python3 module6_knn-regr.py'
 
