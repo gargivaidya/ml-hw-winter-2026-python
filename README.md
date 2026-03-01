@@ -2,6 +2,28 @@
 
 ### Assignments by Module
 
+>The program asks the user for input N (positive integer) and reads it. Then the program asks the user for input k (positive integer) and reads it. Then the program asks the user to provide N (x, y) points (one by one) and reads all of them: first: x value, then: y value for every point one by one. X and Y are the real numbers. In the end, the program asks the user for input X and outputs: the result (Y) of k-NN Regression if k <= N, or any error message otherwise Additionally, provide the variance of labels in the training dataset. The basic functionality of data processing (data initialization, data insertion), should be done using Numpy library while the computation (ML) part should be done using Scikit-learn library as much as possible (note: you can combine with what you've done from the previous task).
+
+`python3 module7_knn-regr-scikit.py`
+
+```
+Enter N (number of points): 5
+Enter k: 2
+Enter points (x then y):
+1.2
+2.3
+-2.3
+-2
+-3
+2
+9
+4.34
+9.2
+-3.4
+Enter query X: 4
+Predicted Y: 3.32
+Variance of training labels: 8.317215999999998
+```
 >The program asks the user for input N (positive integer) and reads it. Then the program asks the user for input k (positive integer) and reads it. Then the program asks the user to provide N (x, y) points (one by one) and reads all of them: first: x value, then: y value for every point one by one. X and Y are the real numbers. In the end, the program asks the user for input X and outputs: the result (Y) of k-NN Regression if k <= N, or any error message otherwise. The basic functionality of data processing (data initialization, data insertion, data calculation) should be done using Numpy library as much as possible (note: you can combine with OOP from the previous task).
 
 `python3 module6_knn-regr.py`

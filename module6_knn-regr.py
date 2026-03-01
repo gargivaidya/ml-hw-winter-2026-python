@@ -2,47 +2,56 @@
 Module 6 
 Author : Gargi Vaidya
 """
+
 import numpy as np
 
-class KNNRegression:
-    def __init__(self, n_points):
-        self.n_points = n_points
-        self.x = np.array([], dtype=float)
-        self.y = np.array([], dtype=float)
 
-    def insert_point(self, x_value, y_value):
-        self.x = np.append(self.x, x_value)
-        self.y = np.append(self.y, y_value)
+class KNNRegression:
+    def __init__(self):
+        self.x = None
+        self.y = None
+
+    def fit(self, x_values, y_values):
+        self.x = np.array(x_values, dtype=float)
+        self.y = np.array(y_values, dtype=float)
 
     def predict(self, query_x, k):
-        if k > self.n_points:
+        if k <= 0:
+            raise ValueError("Error: k must be positive.")
+        if k > len(self.x):
             raise ValueError("Error: k cannot be greater than N.")
 
+        # Compute L1 (Manhattan) distance
         distances = np.abs(self.x - query_x)
-        k_indices = np.argsort(distances)[:k]
+
+        # Get indices of k smallest distances (O(N))
+        k_indices = np.argpartition(distances, k)[:k]
+
+        # Return mean of corresponding y values
         return np.mean(self.y[k_indices])
 
 
 def main():
     N = int(input("Enter N (number of points): "))
-
     if N <= 0:
         print("Error: N must be positive.")
         return
 
     k = int(input("Enter k: "))
-
     if k <= 0:
         print("Error: k must be positive.")
         return
 
-    model = KNNRegression(N)
-
     print("Enter points (x then y):")
-    for i in range(N):
-        x_val = float(input())
-        y_val = float(input())
-        model.insert_point(x_val, y_val)
+    x_values = []
+    y_values = []
+
+    for _ in range(N):
+        x_values.append(float(input()))
+        y_values.append(float(input()))
+
+    model = KNNRegression()
+    model.fit(x_values, y_values)
 
     query_x = float(input("Enter query X: "))
 
