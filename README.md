@@ -2,6 +2,31 @@
 
 ### Assignments by Module
 
+>The program asks the user for input N (positive integer) and reads it.
+
+Then the program asks the user to provide N (x, y) points (one by one) and reads all of them: first: x value, then: y value for every point one by one. X is treated as the ground truth (correct) class label and Y is treated as the predicted class. Both X and Y are either 0 or 1. In the end, the program outputs: the Precision and Recall based on the inputs. The basic functionality of data processing (data initialization, data insertion), should be done using Numpy library while the computation (ML) part should be done using Scikit-learn library as much as possible (note: you can combine with what you've done from the previous tasks).
+
+`python3 module8_metrics-scikit.py`
+
+```
+Enter N (number of points): 5
+Enter points (x then y):
+(x = ground truth label, y = predicted label, both 0 or 1)
+0
+1
+1
+1
+0
+0
+1
+1
+1
+1
+Precision: 0.75
+Recall: 1.0
+```
+
+
 >The program asks the user for input N (positive integer) and reads it. Then the program asks the user for input k (positive integer) and reads it. Then the program asks the user to provide N (x, y) points (one by one) and reads all of them: first: x value, then: y value for every point one by one. X and Y are the real numbers. In the end, the program asks the user for input X and outputs: the result (Y) of k-NN Regression if k <= N, or any error message otherwise Additionally, provide the variance of labels in the training dataset. The basic functionality of data processing (data initialization, data insertion), should be done using Numpy library while the computation (ML) part should be done using Scikit-learn library as much as possible (note: you can combine with what you've done from the previous task).
 
 `python3 module7_knn-regr-scikit.py`
